@@ -4,129 +4,121 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>คำถามหัวใจ 💗</title>
+
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box
 }
+
 html,body{
 width:100%;
 height:100%;
 overflow:hidden
 }
+
 body{
 font-family:Arial,"Noto Sans Thai",sans-serif;
 background:linear-gradient(
 135deg,
-#ffd6e7 0%,
-#ffc1dc 25%,
-#e8b4df 50%,
-#c9b8ed 75%,
-#f7c9d9 100%
+#ffd6e7,
+#ffc0da,
+#e8b5df,
+#c9b9ed,
+#f8c9d9
 );
-background-size:300% 300%;
+background-size:400% 400%;
 animation:bgMove 12s ease infinite;
 display:flex;
 align-items:center;
 justify-content:center;
 color:#8c3159
 }
+
 @keyframes bgMove{
 0%{background-position:0% 50%}
 50%{background-position:100% 50%}
 100%{background-position:0% 50%}
 }
-/* แสงพื้นหลัง */
+
 body:before,
 body:after{
 content:"";
 position:absolute;
 border-radius:50%;
-filter:blur(70px);
-opacity:.35;
+filter:blur(75px);
+opacity:.4;
 pointer-events:none
 }
+
 body:before{
-width:280px;
-height:280px;
-background:#ff91b8;
-top:-80px;
-left:-70px;
-animation:lightMove 8s ease-in-out infinite
+width:300px;
+height:300px;
+background:#ff8fb8;
+top:-100px;
+left:-80px;
+animation:light 8s ease-in-out infinite
 }
+
 body:after{
-width:320px;
-height:320px;
-background:#b99bea;
+width:330px;
+height:330px;
+background:#bba1ed;
 right:-100px;
 bottom:-100px;
-animation:lightMove 10s ease-in-out infinite reverse
+animation:light 10s ease-in-out infinite reverse
 }
-@keyframes lightMove{
+
+@keyframes light{
 0%,100%{transform:translate(0,0)}
 50%{transform:translate(40px,-30px)}
 }
+
 /* หัวใจลอย */
-.float-heart{
+.float{
 position:absolute;
-z-index:1;
 color:rgba(255,255,255,.65);
-font-size:28px;
-filter:drop-shadow(0 5px 10px rgba(180,50,100,.15));
-animation:heartFloat linear infinite;
+z-index:1;
+animation:float 7s ease-in-out infinite;
 pointer-events:none
 }
-.f1{left:7%;top:18%;font-size:25px;animation-duration:6s}
-.f2{left:18%;top:72%;font-size:18px;animation-duration:8s}
-.f3{left:31%;top:12%;font-size:20px;animation-duration:7s}
-.f4{left:8%;top:48%;font-size:14px;animation-duration:9s}
-.f5{left:42%;top:82%;font-size:22px;animation-duration:6.5s}
-.f6{right:8%;top:20%;font-size:30px;animation-duration:7.5s}
-.f7{right:18%;top:70%;font-size:19px;animation-duration:8.5s}
-.f8{right:32%;top:10%;font-size:15px;animation-duration:6s}
-.f9{right:7%;top:50%;font-size:22px;animation-duration:9s}
-.f10{right:43%;bottom:9%;font-size:17px;animation-duration:7s}
-@keyframes heartFloat{
-0%{
-transform:translateY(30px) rotate(-10deg);
-opacity:.25
+
+.f1{left:7%;top:15%;font-size:25px}
+.f2{left:18%;top:72%;font-size:18px;animation-delay:1s}
+.f3{left:30%;top:10%;font-size:20px;animation-delay:2s}
+.f4{left:8%;top:48%;font-size:14px;animation-delay:3s}
+.f5{left:43%;top:82%;font-size:22px;animation-delay:1.5s}
+.f6{right:8%;top:20%;font-size:30px;animation-delay:2s}
+.f7{right:18%;top:70%;font-size:19px;animation-delay:3s}
+.f8{right:32%;top:11%;font-size:15px;animation-delay:1s}
+.f9{right:7%;top:50%;font-size:22px;animation-delay:2.5s}
+.f10{right:43%;bottom:9%;font-size:17px;animation-delay:4s}
+
+@keyframes float{
+0%,100%{transform:translateY(0) rotate(-8deg)}
+50%{transform:translateY(-28px) rotate(8deg)}
 }
-25%{
-transform:translate(15px,-15px) rotate(8deg);
-opacity:.8
-}
-50%{
-transform:translate(-10px,-40px) rotate(-5deg);
-opacity:.65
-}
-75%{
-transform:translate(12px,-20px) rotate(10deg);
-opacity:.85
-}
-100%{
-transform:translateY(30px) rotate(-10deg);
-opacity:.25
-}
-}
-/* กล่องหลัก */
-.main{
+
+/* หน้าแรก */
+.home{
 position:relative;
 z-index:5;
 width:min(90%,460px);
 padding:45px 28px 40px;
 text-align:center;
-border:1px solid rgba(255,255,255,.75);
+border:1px solid rgba(255,255,255,.8);
 border-radius:38px;
 background:rgba(255,255,255,.28);
 backdrop-filter:blur(18px);
 -webkit-backdrop-filter:blur(18px);
 box-shadow:
 0 25px 70px rgba(126,40,88,.22),
-inset 0 1px 0 rgba(255,255,255,.7);
-animation:boxIn 1s ease
+inset 0 1px 0 rgba(255,255,255,.8);
+animation:appear .8s ease
 }
-@keyframes boxIn{
+
+@keyframes appear{
 from{
 opacity:0;
 transform:translateY(25px) scale(.95)
@@ -136,54 +128,47 @@ opacity:1;
 transform:translateY(0) scale(1)
 }
 }
-/* วงแสงรอบหัวใจ */
+
+/* หัวใจกลาง */
 .heart-area{
 position:relative;
-width:200px;
-height:190px;
-margin:0 auto 8px;
+width:190px;
+height:175px;
+margin:0 auto 10px;
 display:flex;
 align-items:center;
 justify-content:center
 }
+
 .glow{
 position:absolute;
-width:145px;
-height:145px;
+width:140px;
+height:140px;
 border-radius:50%;
-background:rgba(255,103,158,.3);
+background:rgba(255,85,150,.3);
 filter:blur(25px);
-animation:glowPulse 2.5s ease-in-out infinite
+animation:glow 2.5s ease-in-out infinite
 }
-@keyframes glowPulse{
-0%,100%{
-transform:scale(.85);
-opacity:.45
+
+@keyframes glow{
+0%,100%{transform:scale(.85);opacity:.4}
+50%{transform:scale(1.2);opacity:.8}
 }
-50%{
-transform:scale(1.15);
-opacity:.8
-}
-}
-/* หัวใจหลัก */
+
 .heart{
 position:relative;
 width:105px;
 height:105px;
-background:linear-gradient(
-135deg,
-#ff6f9f,
-#ef407c,
-#d82f6c
-);
+background:linear-gradient(135deg,#ff76a7,#ed407b,#d62f6c);
 transform:rotate(-45deg);
 border-radius:18px;
 box-shadow:
 0 18px 35px rgba(198,40,93,.35),
 inset 8px 8px 15px rgba(255,255,255,.25);
-animation:mainHeart 2.2s ease-in-out infinite;
+animation:beat 2.2s ease-in-out infinite;
 z-index:2
 }
+
 .heart:before,
 .heart:after{
 content:"";
@@ -193,54 +178,52 @@ height:105px;
 background:inherit;
 border-radius:50%
 }
+
 .heart:before{
 top:-52px;
 left:0
 }
+
 .heart:after{
-top:0;
-left:52px
+left:52px;
+top:0
 }
-@keyframes mainHeart{
-0%,100%{
-transform:rotate(-45deg) scale(1)
+
+@keyframes beat{
+0%,100%{transform:rotate(-45deg) scale(1)}
+50%{transform:rotate(-45deg) scale(1.12)}
 }
-50%{
-transform:rotate(-45deg) scale(1.12)
-}
-}
+
 .heart-symbol{
 position:absolute;
 z-index:4;
 font-size:35px;
-color:white;
-text-shadow:0 3px 10px rgba(170,20,70,.25);
-animation:symbolPulse 1.5s ease-in-out infinite
+color:#fff;
+animation:pulse 1.5s ease-in-out infinite
 }
-@keyframes symbolPulse{
+
+@keyframes pulse{
 0%,100%{transform:scale(1)}
 50%{transform:scale(1.2)}
 }
-/* ข้อความ */
+
 .title{
 font-size:29px;
 font-weight:800;
-letter-spacing:.3px;
 color:#8b2c55;
-margin-top:8px;
 margin-bottom:10px
 }
+
 .subtitle{
 font-size:15px;
 line-height:1.8;
 color:#9d456b;
 margin-bottom:28px
 }
-/* ปุ่ม */
-.start{
-position:relative;
+
+.start,
+.next{
 border:0;
-outline:0;
 cursor:pointer;
 padding:16px 30px;
 border-radius:50px;
@@ -248,46 +231,18 @@ font-family:inherit;
 font-size:17px;
 font-weight:700;
 color:white;
-background:linear-gradient(
-135deg,
-#ff76a7,
-#ed4d88,
-#d93876
-);
-box-shadow:
-0 10px 25px rgba(205,45,103,.3),
-inset 0 1px 2px rgba(255,255,255,.4);
-transition:.3s ease;
-overflow:hidden
+background:linear-gradient(135deg,#ff76a7,#ed4d88,#d93876);
+box-shadow:0 10px 25px rgba(205,45,103,.3);
+transition:.25s
 }
-.start:before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:70%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.45),
-transparent
-);
-transform:skewX(-20deg);
-transition:.6s
+
+.start:hover,
+.next:hover{
+transform:translateY(-4px) scale(1.03);
+box-shadow:0 15px 35px rgba(205,45,103,.4)
 }
-.start:hover{
-transform:translateY(-4px) scale(1.04);
-box-shadow:
-0 15px 35px rgba(205,45,103,.4)
-}
-.start:hover:before{
-left:140%
-}
-.start:active{
-transform:scale(.96)
-}
-/* คำถาม */
+
+/* หน้าแบบสอบถาม */
 .quiz{
 display:none;
 position:fixed;
@@ -302,151 +257,464 @@ background:linear-gradient(
 #f4b8d4,
 #d8c1ed
 );
-background-size:300% 300%;
+background-size:400% 400%;
 animation:bgMove 12s ease infinite
 }
+
 .quiz-box{
-width:min(92%,500px);
-padding:38px 28px;
+width:min(92%,520px);
+padding:35px 28px;
 border-radius:32px;
 text-align:center;
-background:rgba(255,255,255,.8);
+background:rgba(255,255,255,.82);
 border:1px solid rgba(255,255,255,.9);
 box-shadow:0 25px 70px rgba(112,45,94,.2);
 backdrop-filter:blur(15px);
 -webkit-backdrop-filter:blur(15px);
-animation:boxIn .6s ease
+animation:appear .6s ease
 }
+
+/* แถบความคืบหน้า */
+.progress-text{
+font-size:14px;
+font-weight:bold;
+color:#b15378;
+margin-bottom:8px
+}
+
+.progress{
+height:9px;
+width:100%;
+background:#f6d4e2;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:25px
+}
+
+.progress-bar{
+height:100%;
+width:20%;
+border-radius:20px;
+background:linear-gradient(90deg,#ff7eaa,#e8447d);
+transition:.4s ease
+}
+
 .quiz-heart{
-font-size:50px;
-margin-bottom:10px;
-animation:symbolPulse 1.5s ease-in-out infinite
+font-size:45px;
+margin-bottom:5px;
+animation:pulse 1.5s ease-in-out infinite
 }
-.quiz-box h2{
-font-size:25px;
+
+.question{
+font-size:21px;
+line-height:1.6;
+font-weight:700;
 color:#8d3158;
-margin-bottom:12px
-}
-.quiz-box p{
-font-size:16px;
-line-height:1.7;
-color:#9d456b;
+min-height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
 margin-bottom:22px
 }
-.answer{
+
+/* ปุ่มถูกผิด */
+.answers{
+display:flex;
+gap:15px;
+justify-content:center;
+margin-bottom:22px
+}
+
+.answer-btn{
+flex:1;
+max-width:180px;
+padding:15px 10px;
+border:2px solid transparent;
+border-radius:20px;
+font-family:inherit;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+transition:.25s
+}
+
+.correct{
+background:#ffe1ec;
+color:#d83f73;
+border-color:#f4a6c1
+}
+
+.wrong{
+background:#eee2f4;
+color:#8e579f;
+border-color:#cdb1dc
+}
+
+.answer-btn:hover{
+transform:translateY(-4px) scale(1.03);
+box-shadow:0 8px 20px rgba(160,70,110,.15)
+}
+
+.answer-btn.selected{
+transform:scale(.95);
+box-shadow:0 0 0 4px rgba(255,255,255,.7)
+}
+
+/* ช่องพิมพ์ข้อสุดท้าย */
+.text-answer{
+display:none;
 width:100%;
-padding:14px 18px;
-border:2px solid #f1a1c0;
-border-radius:18px;
-background:rgba(255,255,255,.8);
+height:120px;
+resize:none;
+padding:15px;
+border:2px solid #efa5c1;
+border-radius:20px;
+background:rgba(255,255,255,.75);
 outline:none;
 font-family:inherit;
 font-size:16px;
-text-align:center;
-color:#863052;
-margin-bottom:15px;
-transition:.25s
+color:#843353;
+margin-bottom:18px
 }
-.answer:focus{
-border-color:#ed5d91;
-box-shadow:0 0 18px rgba(237,93,145,.2)
+
+.text-answer:focus{
+border-color:#e95388;
+box-shadow:0 0 15px rgba(233,83,136,.2)
 }
-.submit{
-border:0;
-padding:13px 30px;
-border-radius:30px;
-background:linear-gradient(135deg,#ff6f9f,#df3d76);
-color:white;
-font-family:inherit;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-box-shadow:0 8px 20px rgba(210,45,101,.25);
-transition:.25s
+
+/* หน้าจบ */
+.finish{
+display:none;
+text-align:center
 }
-.submit:hover{
-transform:translateY(-3px)
+
+.finish .big-heart{
+font-size:65px;
+animation:pulse 1.5s infinite
 }
+
+.finish h2{
+font-size:27px;
+color:#8d3158;
+margin:12px 0
+}
+
+.finish p{
+color:#a4476d;
+line-height:1.8
+}
+
 @media(max-width:500px){
-.main{
+
+.home{
 padding:38px 20px 35px
 }
+
 .title{
 font-size:25px
 }
-.subtitle{
-font-size:14px
+
+.quiz-box{
+padding:30px 20px
 }
-.heart-area{
-transform:scale(.9);
-margin-top:-8px;
-margin-bottom:-5px
+
+.question{
+font-size:19px
+}
+
+.answer-btn{
+font-size:16px
 }
 }
 </style>
 </head>
+
 <body>
-<!-- หัวใจตกแต่ง -->
-<div class="float-heart f1">♥</div>
-<div class="float-heart f2">♡</div>
-<div class="float-heart f3">♥</div>
-<div class="float-heart f4">♡</div>
-<div class="float-heart f5">♥</div>
-<div class="float-heart f6">♡</div>
-<div class="float-heart f7">♥</div>
-<div class="float-heart f8">♡</div>
-<div class="float-heart f9">♥</div>
-<div class="float-heart f10">♡</div>
+
+<div class="float f1">♥</div>
+<div class="float f2">♡</div>
+<div class="float f3">♥</div>
+<div class="float f4">♡</div>
+<div class="float f5">♥</div>
+<div class="float f6">♡</div>
+<div class="float f7">♥</div>
+<div class="float f8">♡</div>
+<div class="float f9">♥</div>
+<div class="float f10">♡</div>
+
 <!-- หน้าแรก -->
-<main class="main" id="home">
+<main class="home" id="home">
+
 <div class="heart-area">
 <div class="glow"></div>
 <div class="heart"></div>
 <div class="heart-symbol">♡</div>
 </div>
+
 <h1 class="title">คำถามหัวใจ 💗</h1>
+
 <p class="subtitle">
-มีคำถามเล็ก ๆ ที่อยากให้คุณตอบ<br>
-ตอบตามความรู้สึกของหัวใจได้เลยนะ
+มีคำถามเล็ก ๆ ที่อยากให้หัวใจของคุณตอบ<br>
+ตอบตามความรู้สึกจริง ๆ ของคุณนะ
 </p>
+
 <button class="start" onclick="startQuiz()">
 💗 กรุณาตอบคำถามหัวใจ
 </button>
+
 </main>
-<!-- หน้าคำถาม -->
+
+
+<!-- แบบสอบถาม -->
 <section class="quiz" id="quiz">
+
 <div class="quiz-box">
-<div class="quiz-heart">💌</div>
-<h2>คำถามหัวใจ</h2>
-<p>
-คำถามที่ 1<br>
-วันนี้หัวใจของคุณกำลังรู้สึกอย่างไร?
-</p>
-<input
-class="answer"
-id="answer"
-type="text"
-placeholder="พิมพ์คำตอบของคุณ..."
->
-<br>
-<button class="submit" onclick="submitAnswer()">
-ส่งคำตอบ 💗
-</button>
+
+<div id="quizContent">
+
+<div class="progress-text">
+คำถาม <span id="number">1</span> / 5
 </div>
+
+<div class="progress">
+<div class="progress-bar" id="progress"></div>
+</div>
+
+<div class="quiz-heart">💌</div>
+
+<div class="question" id="question"></div>
+
+<div class="answers" id="buttons">
+
+<button class="answer-btn correct" onclick="choose('ถูก')">
+💗 ถูก
+</button>
+
+<button class="answer-btn wrong" onclick="choose('ผิด')">
+💔 ผิด
+</button>
+
+</div>
+
+<textarea
+class="text-answer"
+id="textAnswer"
+placeholder="พิมพ์คำตอบของคุณตรงนี้..."
+></textarea>
+
+<button class="next" onclick="nextQuestion()">
+ถัดไป 💕
+</button>
+
+</div>
+
+
+<!-- หน้าจบ -->
+<div class="finish" id="finish">
+
+<div class="big-heart">💗</div>
+
+<h2>ขอบคุณที่ตอบนะ</h2>
+
+<p>
+คำตอบของคุณถูกส่งเรียบร้อยแล้ว<br>
+หวังว่าคำตอบเหล่านี้จะไปถึงหัวใจอีกดวงนะ
+</p>
+
+</div>
+
+</div>
+
 </section>
+
+
 <script>
+
+/* =========================================
+   ใส่ URL Google Apps Script ตรงนี้
+   ========================================= */
+
+const GOOGLE_SCRIPT_URL =
+"ใส่_URL_GOOGLE_APPS_SCRIPT_ตรงนี้";
+
+
+/* คำถาม */
+const questions = [
+
+"ถ้าไฟครบ100แล้วจะคุยด้วยกันไหม",
+
+"ยังมีใจให้กันอยู่รึป่าว",
+
+"รู้ไหมว่าคนทำรอให้ครบ100วันตั้งนาน",
+
+"มีสาวใหม่ยัง",
+
+"บล็อกเราทำไม?"
+
+];
+
+
+let current = 0;
+let selectedAnswer = "";
+
+
+/* เริ่ม */
 function startQuiz(){
+
 document.getElementById("home").style.display="none";
+
 document.getElementById("quiz").style.display="flex";
+
+showQuestion();
+
 }
-function submitAnswer(){
-const answer=document.getElementById("answer").value.trim();
-if(answer===""){
-alert("หัวใจรอคำตอบอยู่นะ 💗");
+
+
+/* แสดงคำถาม */
+function showQuestion(){
+
+document.getElementById("question").textContent =
+questions[current];
+
+document.getElementById("number").textContent =
+current + 1;
+
+document.getElementById("progress").style.width =
+((current + 1) / questions.length * 100) + "%";
+
+selectedAnswer = "";
+
+document.querySelectorAll(".answer-btn").forEach(btn=>{
+btn.classList.remove("selected");
+});
+
+
+/* ข้อสุดท้ายเป็นช่องพิมพ์ */
+if(current === questions.length - 1){
+
+document.getElementById("buttons").style.display="none";
+
+document.getElementById("textAnswer").style.display="block";
+
+}else{
+
+document.getElementById("buttons").style.display="flex";
+
+document.getElementById("textAnswer").style.display="none";
+
+}
+
+}
+
+
+/* เลือกถูก / ผิด */
+function choose(answer){
+
+selectedAnswer = answer;
+
+document.querySelectorAll(".answer-btn").forEach(btn=>{
+btn.classList.remove("selected");
+});
+
+event.target.classList.add("selected");
+
+}
+
+
+/* ถัดไป */
+function nextQuestion(){
+
+let answer = "";
+
+
+/* ข้อสุดท้าย */
+if(current === questions.length - 1){
+
+answer =
+document.getElementById("textAnswer").value.trim();
+
+if(answer === ""){
+
+alert("หัวใจยังรอคำตอบอยู่นะ 💗");
+
+return;
+
+}
+
+}else{
+
+if(selectedAnswer === ""){
+
+alert("เลือกคำตอบก่อนนะ 💗");
+
+return;
+
+}
+
+answer = selectedAnswer;
+
+}
+
+
+/* ส่งคำตอบ */
+sendAnswer(
+current + 1,
+questions[current],
+answer
+);
+
+
+/* ยังมีคำถาม */
+if(current < questions.length - 1){
+
+current++;
+
+showQuestion();
+
+}else{
+
+document.getElementById("quizContent").style.display="none";
+
+document.getElementById("finish").style.display="block";
+
+}
+
+}
+
+
+/* ส่งข้อมูลไป Google Sheets */
+function sendAnswer(number,question,answer){
+
+if(
+!GOOGLE_SCRIPT_URL ||
+GOOGLE_SCRIPT_URL.includes("ใส่_URL")
+){
+console.log({
+questionNumber:number,
+question:question,
+answer:answer
+});
+
 return;
 }
-alert("ได้รับคำตอบแล้วนะ 💕\nขอบคุณที่เปิดใจตอบคำถาม");
+
+fetch(GOOGLE_SCRIPT_URL,{
+method:"POST",
+mode:"no-cors",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+questionNumber:number,
+question:question,
+answer:answer,
+time:new Date().toLocaleString("th-TH")
+})
+});
+
 }
+
 </script>
+
 </body>
 </html>
